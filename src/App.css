@@ -1,58 +1,97 @@
-/* Importación de la fuente institucional Inter */
+/* ==========================================================================
+   1. FUENTES Y TIPOGRAFÍA GLOBAL
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-
-/* Aplicación global de la tipografía */
 body, button, input, select, textarea, .table, .card {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
-/* --- ESTILOS GENERALES Y CONTENEDORES --- */
-.claim-container, .status-container, .login-container {
+/* ==========================================================================
+   2. ESTRUCTURA, CONTENEDORES Y VISTAS BASE
+   ========================================================================== */
+.claim-container, 
+.status-container, 
+.login-container {
   background-color: #f4f6f9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0; /* Asegura un colchón superior/inferior en pantallas chicas */
 }
 
-/* Limitadores de ancho responsivos centralizados */
-.claim-card, .status-card {
-  max-width: 550px;
+/* ==========================================================================
+   3. TARJETAS (CARDS) - SILUETA VERTICAL MINIMALISTA
+   ========================================================================== */
+/* Estilo base compartido para optimizar código */
+.claim-card, 
+.status-card, 
+.login-card, 
+.home-card {
+  width: 86%; /* Deja aire sutil a los costados en celulares */
   border-radius: 12px !important;
   border-top: 6px solid #003776 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+  background-color: #ffffff;
+  color: #212529;
+}
+
+/* Especificaciones individuales de tamaño y padding */
+.claim-card, 
+.status-card {
+  max-width: 440px;
+  min-height: 520px; /* Forzamos aspecto vertical */
+  padding: 2.5rem 1.5rem !important; /* Más aire arriba/abajo, compacto a los lados */
+  margin: auto;
 }
 
 .login-card {
-  max-width: 420px;
-  border-radius: 12px !important;
-  border-top: 6px solid #003776 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  max-width: 350px;
+  min-height: 440px;
+  padding: 2.5rem 1.5rem !important;
+  margin: auto;
 }
 
 .home-card {
-  max-width: 460px;
-  border-radius: 12px !important;
-  border-top: 6px solid #003776 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  max-width: 350px;
+  min-height: 460px;
+  padding: 3rem 1.75rem !important; /* Padding premium institucional */
+  margin: 1% auto auto auto !important; /* Mantiene el ajuste fino superior */
 }
 
-/* --- COMPONENTES TEXTO Y TÍTULOS --- */
-.claim-title, .status-title, .login-title, .navbar-title {
+/* ==========================================================================
+   4. COMPONENTES DE TEXTO Y TÍTULOS
+   ========================================================================== */
+.claim-title, 
+.status-title, 
+.login-title, 
+.navbar-title {
   color: #003776;
   letter-spacing: -0.5px;
 }
 
-/* --- BOTONES Y ENTRADAS (FORMULARIOS) --- */
-.claim-input, .status-input, .login-input {
+/* ==========================================================================
+   5. FORMULARIOS (INPUTS Y BOTONES)
+   ========================================================================== */
+/* Entradas de texto */
+.claim-input, 
+.status-input, 
+.login-input {
   border-radius: 6px !important;
   border: 1px solid #ced4da;
   padding: 0.6rem 0.75rem;
   font-size: 0.95rem;
 }
 
-.claim-input:focus, .status-input:focus, .login-input:focus {
+.claim-input:focus, 
+.status-input:focus, 
+.login-input:focus {
   border-color: #003776;
   box-shadow: 0 0 0 0.25rem rgba(0, 55, 118, 0.15);
 }
 
+/* Botón Volver */
 .btn-back {
   background-color: #e9ecef !important;
   border: 1px solid #dee2e6 !important;
@@ -68,7 +107,10 @@ body, button, input, select, textarea, .table, .card {
   color: #212529 !important;
 }
 
-.btn-submit, .btn-login, .btn-search {
+/* Botones Principales de Acción */
+.btn-submit, 
+.btn-login, 
+.btn-search {
   background-color: #003776 !important;
   border-color: #003776 !important;
   border-radius: 6px !important;
@@ -76,13 +118,18 @@ body, button, input, select, textarea, .table, .card {
   transition: all 0.2s ease;
 }
 
-.btn-submit:hover, .btn-login:hover, .btn-search:hover {
+.btn-submit:hover, 
+.btn-login:hover, 
+.btn-search:hover {
   background-color: #00234a !important;
   border-color: #00234a !important;
 }
 
-/* --- BLOQUES DE ÉXITO Y RESULTADOS --- */
-.success-box, .result-box {
+/* ==========================================================================
+   6. BLOQUES DE ÉXITO, ESTADOS Y FEEDBACK
+   ========================================================================== */
+.success-box, 
+.result-box {
   background-color: #f8f9fa;
   border-radius: 8px;
   border: 1px dashed #003776;
@@ -117,12 +164,15 @@ body, button, input, select, textarea, .table, .card {
   color: #856404;
 }
 
-/* --- PANEL DE ADMINISTRACIÓN (DASHBOARD) --- */
+/* ==========================================================================
+   7. PANEL DE ADMINISTRACIÓN (DASHBOARD)
+   ========================================================================== */
 .dashboard-container {
   background-color: #f4f6f9;
   min-height: 100vh;
 }
 
+/* Navbar Interna */
 .admin-navbar {
   background-color: #003776 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -148,6 +198,7 @@ body, button, input, select, textarea, .table, .card {
   color: #003776 !important;
 }
 
+/* Tarjetas de Métricas Rápidas */
 .stat-card {
   border-radius: 8px !important;
   border: none !important;
@@ -158,6 +209,7 @@ body, button, input, select, textarea, .table, .card {
 .stat-border-pending { border-left: 5px solid #ffc107 !important; }
 .stat-border-resolved { border-left: 5px solid #198754 !important; }
 
+/* Tabla Centralizada de Gestión */
 .table-container {
   background-color: white;
   border-radius: 8px;
@@ -181,6 +233,7 @@ body, button, input, select, textarea, .table, .card {
   padding: 14px 16px;
 }
 
+/* Badges de la Tabla */
 .badge-pending {
   background-color: #fff3cd !important;
   color: #856404 !important;
@@ -195,6 +248,7 @@ body, button, input, select, textarea, .table, .card {
   padding: 6px 10px;
 }
 
+/* Botones de acción dentro de la tabla */
 .btn-action-success {
   background-color: #198754 !important;
   border-color: #198754 !important;
@@ -203,7 +257,9 @@ body, button, input, select, textarea, .table, .card {
   padding: 6px 12px;
 }
 
-/* Ajustes finos para celulares muy pequeños */
+/* ==========================================================================
+   8. MEDIA QUERIES (RESPONSIVE FINE-TUNING)
+   ========================================================================== */
 @media (max-width: 576px) {
   .generated-code {
     font-size: 1.3rem;
@@ -211,97 +267,4 @@ body, button, input, select, textarea, .table, .card {
   .table-container h5 {
     font-size: 1.1rem;
   }
-}
-
-/* --- ESTILOS GENERALES Y CONTENEDORES --- */
-.claim-container, .status-container, .login-container {
-  background-color: #f4f6f9;
-}
-
-/* Limitadores de ancho responsivos centralizados y esbeltos */
-.claim-card, .status-card {
-  width: 90%;            /* Toma el 90% del ancho de la pantalla en móviles para dejar aire */
-  max-width: 480px;      /* Bajamos de 550px a 480px para que sea más delgada en pantallas medianas/grandes */
-  border-radius: 12px !important;
-  border-top: 6px solid #003776 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
-  margin: 1.5rem auto;   /* Genera una separación uniforme arriba y abajo */
-}
-
-.login-card {
-  width: 90%;
-  max-width: 380px;      /* Bajamos de 420px a 380px para estilizar el login */
-  border-radius: 12px !important;
-  border-top: 6px solid #003776 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
-  margin: 1.5rem auto;
-}
-
-.home-card {
-  width: 90%;
-  max-width: 380px;      /* Bajamos de 460px a 380px, dándole un aspecto bien vertical e integrado */
-  border-radius: 12px !important;
-  border-top: 6px solid #003776 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
-  margin: 1.5rem auto;
-}
-
-/* --- ESTILOS GENERALES Y CONTENEDORES --- */
-.claim-container, .status-container, .login-container {
-  background-color: #f4f6f9;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 0; /* Asegura un colchón superior/inferior en pantallas chicas */
-}
-
-/* Limitadores de ancho y alto para silueta vertical (SaaS minimalista) */
-.claim-card, .status-card {
-  width: 86%;              /* Reducimos del 90% al 86% para hacerla más esbelta */
-  max-width: 440px;        /* Ajuste fino de ancho máximo para pantallas medianas */
-  min-height: 520px;       /* Forzamos un alto mínimo para garantizar la verticalidad */
-  padding: 2.5rem 1.5rem !important; /* Más padding arriba y abajo, menos a los costados */
-  border-radius: 12px !important;
-  border-top: 6px solid #003776 !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
-  margin: auto;
-  display: flex;
-  
-}
-
-.login-card {
-  width: 86%;
-  max-width: 350px;        /* Comprimido para aspecto estilizado tipo app mobile */
-  min-height: 440px;       /* Altura mínima estirada */
-  padding: 2.5rem 1.5rem !important; 
-  border-radius: 12px !important;
-  border-top: 6px solid #003776 !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
-  margin: auto;
-}
-
-.home-card {
-  width: 86%;
-  max-width: 350px;        /* Ancho estrecho para que predomine la altura */
-  min-height: 460px;       /* Forzamos que estire hacia abajo de forma limpia */
-  padding: 3rem 1.75rem !important; /* Padding premium: mucho aire arriba y abajo */
-  border-radius: 12px !important;
-  border-top: 6px solid #003776 !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
-  margin: auto;
-}
-
-.home-card {
-  width: 86%;
-  max-width: 350px;
-  min-height: 460px;
-  border-radius: 12px !important;
-  border-top: 6px solid #003776 !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
-  margin: auto;
-  
-  
-  margin-top: 1% !important; 
-  
 }
