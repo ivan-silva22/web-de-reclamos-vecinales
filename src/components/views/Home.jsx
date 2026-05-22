@@ -4,13 +4,9 @@ import { PlusCircle, Search } from "react-bootstrap-icons";
 
 const Home = ({ alHacerClicIniciar, alHacerClicVerMapa }) => {
   return (
-    // CAMBIO CLAVE: Cambiamos 'align-items-center' por 'align-items-start' e incrementamos el padding superior (pt-5)
-    <Container className="d-flex align-items-start justify-content-center min-vh-100 pt-5 pb-4 bg-light">
-      {/* Añadimos un estilo inline mt-4 o mt-md-5 para calibrar la altura exacta del rebote superior */}
+    <Container className="d-flex align-items-start justify-content-center min-vh-100 pt-5 pb-4 bg-light mt-0">
       <Card className="border-0 bg-white text-dark p-4 text-center home-card mt-4" style={{ marginTop: "12vh" }}>
         <Card.Body className="d-flex flex-column justify-content-between">
-          
-          {/* Encabezado Institucional */}
           <div className="mb-3">
             <h3 className="fw-bold text-dark mt-1" style={{ fontSize: "1.65rem" }}>
               Gestión Ciudadana
@@ -23,7 +19,6 @@ const Home = ({ alHacerClicIniciar, alHacerClicVerMapa }) => {
 
           <hr className="text-muted my-3" style={{ opacity: "0.1" }} />
 
-          {/* Botones de Acción */}
           <Row className="g-3">
             <Col xs={12}>
               <Button
