@@ -1,3 +1,8 @@
+import React from "react";
+import { Container, Button, Card } from "react-bootstrap";
+// Importación necesaria para evitar errores de íconos
+import { PlusCircle, Search } from "react-bootstrap-icons";
+
 const Home = ({ alHacerClicIniciar, alHacerClicVerMapa }) => {
   return (
     <Container fluid className="claim-container bg-light">
@@ -41,4 +46,5 @@ const Home = ({ alHacerClicIniciar, alHacerClicVerMapa }) => {
   );
 };
 
+// Esta línea es crítica: asegúrate de que no haya nada escrito después
 export default Home;
