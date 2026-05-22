@@ -1,16 +1,28 @@
-# React + Vite
+# 🏛️ Sistema de Gestión y Seguimiento de Reclamos Vecinales
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una plataforma web responsiva de alta fidelidad diseñada para optimizar e integrar la comunicación entre los ciudadanos y la administración municipal. Este sistema permite a los vecinos reportar incidencias en la vía pública de forma ágil y ofrece a los funcionarios un panel de control técnico para coordinar soluciones en tiempo real.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Características Clave
 
-## React Compiler
+* **Flujo del Ciudadano (Generación de Reportes):** Formulario optimizado con validaciones avanzadas para registrar incidencias de infraestructura urbana (Alumbrado Público, Bacheo, Higiene Urbana, Cloacas).
+* **Seguimiento por Código Único:** Consulta del estado de solicitudes (`En Proceso`, `Solucionado`) en tiempo real mediante un identificador alfanumérico único.
+* **Panel de Control Administrativo (Dashboard):** Vista protegida para operadores municipales con métricas generales de gestión y control de solicitudes en vivo.
+* **Diseño Fluido y Adaptable (SPA):** Navegación instantánea de una sola página sin recargas de ventana, completamente adaptada a dispositivos móviles.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologías Utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+El proyecto fue desarrollado utilizando el ecosistema moderno de desarrollo web enfocado en alto rendimiento y escalabilidad:
+
+* **React 19** + **Vite** (Configuración de alto rendimiento con HMR)
+* **React Router DOM v6** (Enrutamiento dinámico interno y persistencia de estados)
+* **React Hook Form** (Gestión eficiente de formularios y validaciones avanzadas con expresiones regulares)
+* **Bootstrap 5** & **React-Bootstrap** (Diseño e interfaz responsiva bajo lineamientos formales)
+* **React Bootstrap Icons** (Paquete iconográfico semántico)
+
+---
+## 👨‍🦱 Autor
+Ivan Silva
