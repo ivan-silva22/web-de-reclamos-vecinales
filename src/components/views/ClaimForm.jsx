@@ -74,17 +74,17 @@ const ClaimForm = ({ onClickBack }) => {
 
               <Form onSubmit={handleSubmit(onSubmit)} noValidate>
                 <Form.Group className="mb-3" controlId="formFullName">
-                  <Form.Label className="fw-semibold text-secondary">Nombre completo</Form.Label>
+                  <Form.Label className="fw-semibold text-secondary fs-6">Nombre completo</Form.Label>
                   <Form.Control type="text" placeholder="Ej: Juan Pérez" className="claim-input" {...register("fullName", { required: true })} isInvalid={!!errors.fullName} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formPhoneNumber">
-                  <Form.Label className="fw-semibold text-secondary">Teléfono celular</Form.Label>
+                  <Form.Label className="fw-semibold text-secondary fs-6">Teléfono celular</Form.Label>
                   <Form.Control type="tel" placeholder="Ej: 3865XXXXXX" className="claim-input" {...register("phoneNumber", { required: true })} isInvalid={!!errors.phoneNumber} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formCategory">
-                  <Form.Label className="fw-semibold text-secondary">Tipo de problema</Form.Label>
+                  <Form.Label className="fw-semibold text-secondary fs-6">Tipo de problema</Form.Label>
                   <Form.Select className="claim-input" {...register("category", { required: true })} isInvalid={!!errors.category}>
                     <option value="">Seleccione una opción...</option>
                     <option value="alumbrado">Alumbrado Público</option>
@@ -94,18 +94,18 @@ const ClaimForm = ({ onClickBack }) => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formAddress">
-                  <Form.Label className="fw-semibold text-secondary">Dirección</Form.Label>
+                  <Form.Label className="fw-semibold text-secondary fs-6">Dirección</Form.Label>
                   <Form.Control type="text" placeholder="Ej: Av. San Martín 450" className="claim-input" {...register("address", { required: true })} isInvalid={!!errors.address} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formDescription">
-                  <Form.Label className="fw-semibold text-secondary">Detalles del problema</Form.Label>
+                  <Form.Label className="fw-semibold text-secondary fs-6">Detalles del problema</Form.Label>
                   <Form.Control as="textarea" rows={3} placeholder="Breve descripción..." className="claim-input" {...register("description", { required: true })} isInvalid={!!errors.description} />
                 </Form.Group>
 
                 {/* Campo de fotografía opcional */}
                 <Form.Group className="mb-4" controlId="formImage">
-                  <Form.Label className="fw-semibold text-secondary">
+                  <Form.Label className="fw-semibold text-secondary fs-6">
                     Foto del problema (opcional)
                   </Form.Label>
                   <Form.Control 
