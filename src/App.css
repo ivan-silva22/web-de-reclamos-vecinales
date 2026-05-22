@@ -1,0 +1,59 @@
+/* Contenedor principal del formulario */
+.claim-container {
+  background-color: #f8f9fa; /* Equivale a bg-light */
+}
+
+/* Tarjeta contenedora con el borde superior institucional */
+.claim-card {
+  max-width: 500px;
+  border-radius: 16px !important;
+  border-top: 6px solid #003776 !important;
+}
+
+/* Encabezado principal */
+.claim-title {
+  color: #003776;
+}
+
+/* Botón Volver con fondo gris sutil */
+.btn-back {
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #dee2e6 !important;
+}
+
+/* Inputs, Selects y Textareas del formulario */
+.claim-input {
+  border-radius: 8px !important;
+}
+
+/* Texto de ayuda debajo de los campos */
+.claim-help-text {
+  font-size: 0.75rem;
+}
+
+.btn-back{
+  background-color: #003776 !important;
+  border-color: #003776 !important;
+  
+}
+
+.btn-back:hover {
+  background-color: #002550 !important;
+  border-color: #002550 !important;
+}
+
+/* Botón principal de envío */
+.btn-submit {
+  background-color: #003776 !important;
+  border-color: #003776 !important;
+  border-radius: 8px !important;
+  font-size: 1.05rem;
+}
+
+/* Efecto hover opcional para el botón principal */
+.btn-submit:hover {
+  background-color: #002550 !important;
+  border-color: #002550 !important;
+}
