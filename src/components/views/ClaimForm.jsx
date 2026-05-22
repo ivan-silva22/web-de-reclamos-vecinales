@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Container, Button, Card, Form } from "react-bootstrap";
-import { Person, Telephone, GeoAlt, CardText, ChevronLeft, CheckCircleFill } from "react-bootstrap-icons";
+import { ChevronLeft, CheckCircleFill } from "react-bootstrap-icons";
 
 const ClaimForm = ({ onClickBack }) => {
   const {
@@ -14,6 +14,7 @@ const ClaimForm = ({ onClickBack }) => {
   const [claimCode, setClaimCode] = useState("");
 
   const onSubmit = (data) => {
+    // Lógica para enviar el formulario
     const randomNum = Math.floor(1000 + Math.random() * 9000);
     const generatedCode = `REC-${randomNum}`;
     setClaimCode(generatedCode);
@@ -55,13 +56,20 @@ const ClaimForm = ({ onClickBack }) => {
             </div>
           ) : (
             <>
-              {/* Encabezado con botón de volver */}
+              {/* Encabezado */}
               <div className="mb-4">
-                <Button variant="link" className="p-0 text-decoration-none d-flex align-items-center mb-2" onClick={onClickBack} style={{ color: "#003776" }}>
+                <Button 
+                  variant="link" 
+                  className="p-0 text-decoration-none d-flex align-items-center mb-2" 
+                  onClick={onClickBack} 
+                  style={{ color: "#003776", fontSize: "1rem" }}
+                >
                   <ChevronLeft size={18} /> Volver
                 </Button>
                 <h4 className="fw-bold mb-1">Nueva Solicitud</h4>
-                <p className="text-muted" style={{ fontSize: "1rem" }}>Complete los campos para registrar la situación.</p>
+                <p className="text-muted" style={{ fontSize: "1.05rem" }}>
+                  Complete los campos para registrar la situación.
+                </p>
               </div>
 
               <Form onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -90,9 +98,22 @@ const ClaimForm = ({ onClickBack }) => {
                   <Form.Control type="text" placeholder="Ej: Av. San Martín 450" className="claim-input" {...register("address", { required: true })} isInvalid={!!errors.address} />
                 </Form.Group>
 
-                <Form.Group className="mb-4" controlId="formDescription">
+                <Form.Group className="mb-3" controlId="formDescription">
                   <Form.Label className="fw-semibold text-secondary">Detalles del problema</Form.Label>
                   <Form.Control as="textarea" rows={3} placeholder="Breve descripción..." className="claim-input" {...register("description", { required: true })} isInvalid={!!errors.description} />
+                </Form.Group>
+
+                {/* Campo de fotografía opcional */}
+                <Form.Group className="mb-4" controlId="formImage">
+                  <Form.Label className="fw-semibold text-secondary">
+                    Foto del problema (opcional)
+                  </Form.Label>
+                  <Form.Control 
+                    type="file" 
+                    accept="image/*" 
+                    className="claim-input" 
+                    {...register("imageFile")}
+                  />
                 </Form.Group>
 
                 <Button type="submit" className="btn-submit w-100">
