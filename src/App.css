@@ -291,3 +291,17 @@ body, button, input, select, textarea, .table, .card {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
   margin: auto;
 }
+
+.home-card {
+  width: 86%;
+  max-width: 350px;
+  min-height: 460px;
+  border-radius: 12px !important;
+  border-top: 6px solid #003776 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+  margin: auto;
+  
+  
+  margin-top: 1% !important; 
+  
+}

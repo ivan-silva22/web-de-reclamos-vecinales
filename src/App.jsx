@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -9,9 +9,12 @@ import ClaimStatus from './components/views/ClaimStatus';
 import Login from './components/views/Login';
 import AdminDashboard from './components/views/AdminDashboard';
 
-// Creamos un componente intermedio para poder usar el hook useNavigate dentro del contexto del Router
 const AppRoutes = () => {
   const navigate = useNavigate();
+  
+  // SOLUCIÓN CLAVE: Escuchamos la ubicación actual de React Router
+  const location = useLocation();
+  
   // Estado para simular si el operador inició sesión o no
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -50,8 +53,8 @@ const AppRoutes = () => {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
-      {/* Footer formal y discreto para acceder al login administrativo durante la demo */}
-      {window.location.pathname !== '/admin' && (
+      {/* Renderizado condicional reactivo utilizando location.pathname */}
+      {location.pathname !== '/admin' && (
         <footer className="text-center py-3 bg-light border-top" style={{ fontSize: "0.8rem" }}>
           <span
             style={{ cursor: "pointer", textDecoration: "underline" }}
