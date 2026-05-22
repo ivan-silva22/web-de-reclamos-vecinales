@@ -47,7 +47,7 @@ const Home = ({ alHacerClicIniciar, alHacerClicVerMapa }) => {
                 style={{ borderRadius: "6px", fontSize: "0.95rem" }}
               >
                 <Search size={16} />
-                Consultar Estado de Reclamos
+                Consultar Estado
               </Button>
             </Col>
           </Row>
