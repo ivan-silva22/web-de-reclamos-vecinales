@@ -60,13 +60,13 @@ const ClaimForm = ({ onClickBack }) => {
               <div className="mb-4">
                 <Button 
                   variant="link" 
-                  className="p-0 text-decoration-none d-flex align-items-center mb-2" 
+                  className="p-0 text-decoration-none d-flex align-items-center mb-2 btn-back" 
                   onClick={onClickBack} 
-                  style={{ color: "#003776", fontSize: "1rem" }}
+                  
                 >
-                  <ChevronLeft size={18} /> Volver
+                  <ChevronLeft size={18} /> Volver al Inicio
                 </Button>
-                <h4 className="fw-bold mb-1">Nueva Solicitud</h4>
+                <h4 className="fw-bold mb-1 mt-5">Nueva Solicitud</h4>
                 <p className="text-muted" style={{ fontSize: "1.05rem" }}>
                   Complete los campos para registrar la situación.
                 </p>

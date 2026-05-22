@@ -1,57 +1,102 @@
 /* ==========================================================================
-   1. FUENTES Y TIPOGRAFÍA GLOBAL
+   1. FUENTES Y CONFIGURACIÓN GLOBAL
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Aumentamos el tamaño base para móviles */
 body {
-  font-size: 16px; /* Base sólida para lectura cómoda */
-  -webkit-text-size-adjust: 100%; /* Evita cambios raros en iOS */
-}
-
-body, button, input, select, textarea, .table, .card {
+  font-size: 16px;
+  background-color: #f4f6f9;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  margin: 0;
 }
 
 /* ==========================================================================
-   4. FORMULARIOS E INPUTS (Texto más grande)
+   2. CONTENEDORES Y ESTRUCTURA (Alineación Superior)
    ========================================================================== */
-.claim-input, .status-input, .login-input {
-  border-radius: 6px !important;
+.claim-container, .status-container, .login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+}
+
+/* ==========================================================================
+   3. TARJETAS (CARDS)
+   ========================================================================== */
+.home-card, .claim-card, .status-card {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 16px !important;
+  border-top: 6px solid #003776 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07) !important;
+  padding: 2rem 1.5rem !important;
+  background-color: #ffffff;
+}
+
+/* ==========================================================================
+   4. INPUTS Y FORMULARIOS
+   ========================================================================== */
+.claim-input, .status-input {
+  border-radius: 8px !important;
   border: 1px solid #ced4da;
-  padding: 0.85rem 0.75rem; /* Un poco más de altura */
-  font-size: 1.05rem !important; /* Más grande en celular */
-  margin-bottom: 1.25rem;
+  padding: 0.9rem !important;
+  font-size: 1.05rem !important;
+  width: 100%;
 }
 
 /* ==========================================================================
-   5. BOTONES (Texto más grande)
+   5. BOTONES
    ========================================================================== */
-.btn-submit, .btn-login, .btn-search, .btn-back {
-  padding: 1.1rem 1rem !important; 
-  font-size: 1.05rem !important; /* Ligeramente más grande */
+.btn-submit, .btn-search, .btn-back {
+  padding: 1rem !important;
+  font-size: 1.05rem !important;
   font-weight: 600 !important;
-  /* ... resto igual ... */
+  border-radius: 8px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-submit, .btn-search {
+  background-color: #003776 !important;
+  border-color: #003776 !important;
+  color: #ffffff !important;
+}
+
+.btn-back {
+  background-color: #e9ecef !important;
+  color: #495057 !important;
+  border: none !important;
 }
 
 /* ==========================================================================
-   7. MEDIA QUERIES (Ajustes de escala)
+   6. COMPONENTES ESPECÍFICOS (Resultados y Código)
    ========================================================================== */
-/* Pantallas pequeñas (celulares) */
-@media (max-width: 575px) {
-  h4 { font-size: 1.7rem !important; }
-  p { font-size: 1.05rem !important; }
-  .btn-submit, .btn-back { font-size: 1.05rem !important; }
+.generated-code {
+  font-size: 2rem !important;
+  color: #003776;
+  font-weight: 800;
+  padding: 1rem;
+  background-color: #e6eef7;
+  border-radius: 8px;
+  text-align: center;
+  margin: 1rem 0;
 }
 
-/* Escritorio */
+.result-box {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   7. MEDIA QUERIES (Ajustes escritorio)
+   ========================================================================== */
 @media (min-width: 576px) {
-  .claim-container, .status-container, .login-container {
-    padding-top: 3rem;
-  }
-  
-  .claim-card, .status-card, .login-card {
-    min-height: 520px;
-    padding: 4rem 2.5rem !important;
+  .home-card, .claim-card, .status-card {
+    padding: 3rem !important;
   }
 }

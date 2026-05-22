@@ -39,9 +39,9 @@ const ClaimStatus = ({ onClickBack }) => {
             </div>
 
             {/* Encabezado */}
-            <div className="mb-3.5">
+            <div className="mb-3.5 mt-4">
               <h5 className="fw-bold mb-1 status-title" style={{ fontSize: "1.35rem" }}>Seguimiento de Reclamo</h5>
-              <p className="text-muted small mb-0" style={{ fontSize: "0.8rem" }}>Ingrese el código de su solicitud.</p>
+              <p className="text-muted small mb-0 mt-4 fs-6" style={{ fontSize: "0.8rem" }}>Ingrese el código de su solicitud.</p>
             </div>
 
             {/* Formulario de Búsqueda */}
@@ -76,29 +76,29 @@ const ClaimStatus = ({ onClickBack }) => {
           {searchResult && (
             <div className="result-box p-3 border rounded shadow-sm bg-light mt-1 text-start" style={{ fontSize: "0.82rem" }}>
               <div className="d-flex justify-content-between align-items-center mb-2.5 border-bottom pb-2">
-                <span className="fw-bold text-secondary" style={{ fontSize: "0.72rem" }}>CÓDIGO: {searchResult.code}</span>
+                <span className="fw-bold text-secondary" >CÓDIGO: {searchResult.code}</span>
                 <span className="status-badge in-progress px-2 py-0.5 rounded bg-warning text-dark fw-semibold" style={{ fontSize: "0.7rem" }}>
                   {searchResult.status}
                 </span>
               </div>
 
               {/* CORRECCIÓN: Añadido text-truncate o flex-wrap para evitar roturas si las direcciones son largas */}
-              <div className="mb-2 d-flex align-items-center gap-2 text-dark">
+              <div className="mb-2 d-flex align-items-center gap-2 text-dark mt-2 fs-6">
                 <CalendarEvent size={13} className="text-secondary opacity-70" />
                 <span><strong>Fecha:</strong> {searchResult.date}</span>
               </div>
 
-              <div className="mb-2 d-flex align-items-center gap-2 text-dark">
+              <div className="mb-2 d-flex align-items-center gap-2 text-dark mt-1 fs-6">
                 <InfoCircle size={13} className="text-secondary opacity-70" />
                 <span><strong>Categoría:</strong> {searchResult.category}</span>
               </div>
 
-              <div className="mb-2.5 d-flex align-items-start gap-2 text-dark">
+              <div className="mb-2.5 d-flex align-items-start gap-2 text-dark mt-1 fs-6">
                 <GeoAlt size={13} className="text-secondary opacity-70 mt-0.5" />
                 <span className="text-wrap"><strong>Ubicación:</strong> {searchResult.address}</span>
               </div>
 
-              <div className="p-2 bg-white rounded border text-muted mt-2" style={{ fontSize: "0.78rem", lineHeight: "1.3" }}>
+              <div className="p-2 bg-white rounded border text-muted mt-3 fs-6" style={{ fontSize: "0.78rem", lineHeight: "1.3" }}>
                 <strong>Actualización:</strong> {searchResult.details}
               </div>
             </div>
