@@ -8,8 +8,6 @@ const ClaimStatus = ({ onClickBack }) => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    
-    // Simulamos una respuesta de la base de datos para la demo
     if (claimCode.trim() !== "") {
       setSearchResult({
         code: claimCode.toUpperCase(),
@@ -17,38 +15,27 @@ const ClaimStatus = ({ onClickBack }) => {
         category: "Alumbrado Público",
         address: "Av. San Martín 450",
         status: "En Proceso",
-        details: "Cuadrilla técnica asignada para el recambio de luminarias LED."
+        details: "Cuadrilla asignada para el recambio de luminarias."
       });
     }
   };
 
   return (
     <Container className="d-flex align-items-center justify-content-center min-vh-100 py-4 status-container">
-      <Card className="shadow-sm border-0 bg-white text-dark p-3 w-100 status-card">
+      <Card className="border-0 bg-white text-dark p-3 w-100 status-card">
         <Card.Body>
           
-          {/* Back Button */}
           <div className="d-flex mb-3">
-            <Button
-              variant="light"
-              className="text-decoration-none text-secondary d-flex align-items-center gap-2 small px-3 py-1.5 btn-back text-white"
-              onClick={onClickBack}
-            >
+            <Button variant="light" className="btn-back d-flex align-items-center gap-2" onClick={onClickBack}>
               <ChevronLeft size={14} /> Volver al inicio
             </Button>
           </div>
 
-          {/* Header */}
           <div className="mb-4">
-            <h4 className="fw-bold text-dark mb-1 status-title">
-              Seguimiento de Reclamo
-            </h4>
-            <p className="text-muted small mb-0">
-              Ingrese el código otorgado al presentar su solicitud para conocer su estado.
-            </p>
+            <h4 className="fw-bold mb-1 status-title">Seguimiento de Reclamo</h4>
+            <p className="text-muted small mb-0">Ingrese el código de su solicitud.</p>
           </div>
 
-          {/* Search Form */}
           <Form onSubmit={handleSearch} className="mb-4">
             <InputGroup>
               <Form.Control
@@ -59,15 +46,14 @@ const ClaimStatus = ({ onClickBack }) => {
                 required
                 className="status-input"
               />
-              <Button type="submit" variant="primary" className="btn-search px-3">
+              <Button type="submit" variant="primary" className="btn-search px-3 text-white">
                 <Search size={16} />
               </Button>
             </InputGroup>
           </Form>
 
-          {/* Simulated Result Box */}
           {searchResult && (
-            <div className="result-box p-3 animate__animated animate__fadeIn">
+            <div className="result-box p-3">
               <div className="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
                 <span className="fw-bold text-secondary small">CÓDIGO: {searchResult.code}</span>
                 <span className="status-badge in-progress">{searchResult.status}</span>
@@ -93,7 +79,6 @@ const ClaimStatus = ({ onClickBack }) => {
               </div>
             </div>
           )}
-
         </Card.Body>
       </Card>
     </Container>

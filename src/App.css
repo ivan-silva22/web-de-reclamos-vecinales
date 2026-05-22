@@ -1,210 +1,213 @@
-/* Contenedor principal del formulario */
-.claim-container {
-  background-color: #f8f9fa; /* Equivale a bg-light */
+/* Importación de la fuente institucional Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Aplicación global de la tipografía */
+body, button, input, select, textarea, .table, .card {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
-/* Tarjeta contenedora con el borde superior institucional */
-.claim-card {
-  max-width: 500px;
-  border-radius: 16px !important;
+/* --- ESTILOS GENERALES Y CONTENEDORES --- */
+.claim-container, .status-container, .login-container {
+  background-color: #f4f6f9;
+}
+
+/* Limitadores de ancho responsivos centralizados */
+.claim-card, .status-card {
+  max-width: 550px;
+  border-radius: 12px !important;
   border-top: 6px solid #003776 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Encabezado principal */
-.claim-title {
+.login-card {
+  max-width: 420px;
+  border-radius: 12px !important;
+  border-top: 6px solid #003776 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.home-card {
+  max-width: 460px;
+  border-radius: 12px !important;
+  border-top: 6px solid #003776 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* --- COMPONENTES TEXTO Y TÍTULOS --- */
+.claim-title, .status-title, .login-title, .navbar-title {
   color: #003776;
+  letter-spacing: -0.5px;
 }
 
-/* Botón Volver con fondo gris sutil */
+/* --- BOTONES Y ENTRADAS (FORMULARIOS) --- */
+.claim-input, .status-input, .login-input {
+  border-radius: 6px !important;
+  border: 1px solid #ced4da;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+.claim-input:focus, .status-input:focus, .login-input:focus {
+  border-color: #003776;
+  box-shadow: 0 0 0 0.25rem rgba(0, 55, 118, 0.15);
+}
+
 .btn-back {
-  border-radius: 8px;
+  background-color: #e9ecef !important;
+  border: 1px solid #dee2e6 !important;
+  color: #495057 !important;
+  border-radius: 6px !important;
   font-size: 0.85rem;
   font-weight: 500;
-  border: 1px solid #dee2e6 !important;
-}
-
-/* Inputs, Selects y Textareas del formulario */
-.claim-input {
-  border-radius: 8px !important;
-}
-
-/* Texto de ayuda debajo de los campos */
-.claim-help-text {
-  font-size: 0.75rem;
-}
-
-.btn-back{
-  background-color: #003776 !important;
-  border-color: #003776 !important;
-  
+  transition: all 0.2s ease;
 }
 
 .btn-back:hover {
-  background-color: #002550 !important;
-  border-color: #002550 !important;
+  background-color: #dee2e6 !important;
+  color: #212529 !important;
 }
 
-/* Botón principal de envío */
-.btn-submit {
+.btn-submit, .btn-login, .btn-search {
   background-color: #003776 !important;
   border-color: #003776 !important;
-  border-radius: 8px !important;
-  font-size: 1.05rem;
+  border-radius: 6px !important;
+  font-size: 1rem;
+  transition: all 0.2s ease;
 }
 
-/* Efecto hover opcional para el botón principal */
-.btn-submit:hover {
-  background-color: #002550 !important;
-  border-color: #002550 !important;
+.btn-submit:hover, .btn-login:hover, .btn-search:hover {
+  background-color: #00234a !important;
+  border-color: #00234a !important;
 }
 
-/* Contenedor principal */
-.status-container {
+/* --- BLOQUES DE ÉXITO Y RESULTADOS --- */
+.success-box, .result-box {
   background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px dashed #003776;
 }
 
-/* Tarjeta principal con el toque azul de gobierno */
-.status-card {
-  max-width: 500px;
-  border-radius: 16px !important;
-  border-top: 6px solid #003776 !important;
-}
-
-/* Títulos */
-.status-title {
-  color: #003776;
-}
-
-
-/* Input de búsqueda */
-.status-input {
-  border-radius: 8px !important;
-}
-
-/* Botón de buscar */
-.btn-search {
-  background-color: #003776 !important;
-  border-color: #003776 !important;
-  border-radius: 8px !important;
-}
-
-.btn-search:hover {
-  background-color: #002550 !important;
-  border-color: #002550 !important;
-}
-
-/* Contenedor del resultado simulado */
 .result-box {
-  background-color: #f8f9fa;
-  border-radius: 12px;
   border: 1px solid #e9ecef;
 }
 
-/* Badge de estado (Ej: En Proceso) */
+.generated-code {
+  font-size: 1.6rem;
+  color: #003776;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background-color: #e6eef7;
+  border-radius: 6px;
+  padding: 8px 16px;
+  display: inline-block;
+}
+
 .status-badge {
   background-color: #e2e3e5;
   color: #383d41;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 50px;
 }
 
-/* Variantes de color para los estados */
 .status-badge.in-progress {
   background-color: #fff3cd;
   color: #856404;
 }
 
-/* Contenedor principal del panel */
+/* --- PANEL DE ADMINISTRACIÓN (DASHBOARD) --- */
 .dashboard-container {
   background-color: #f4f6f9;
   min-height: 100vh;
 }
 
-/* Encabezado superior */
-.dashboard-header {
-  background-color: #003776;
-  color: white;
-  padding: 20px 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+.admin-navbar {
+  background-color: #003776 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 14px 0;
 }
 
-/* Tarjetas de estadísticas superiores */
+.navbar-title {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.btn-logout {
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+  font-size: 0.85rem !important;
+  border-radius: 6px !important;
+}
+
+.btn-logout:hover {
+  background-color: #ffffff !important;
+  color: #003776 !important;
+}
+
 .stat-card {
-  border-radius: 10px !important;
+  border-radius: 8px !important;
   border: none !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02) !important;
 }
 
 .stat-border-total { border-left: 5px solid #003776 !important; }
 .stat-border-pending { border-left: 5px solid #ffc107 !important; }
 .stat-border-resolved { border-left: 5px solid #198754 !important; }
 
-/* Tabla de gestión */
 .table-container {
   background-color: white;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  border: 1px solid #e9ecef !important;
 }
 
 .custom-table th {
   background-color: #f8f9fa !important;
   color: #495057;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 16px;
 }
 
 .custom-table td {
-  font-size: 0.9rem;
-  vertical-align: middle;
+  font-size: 0.92rem;
+  padding: 14px 16px;
 }
 
-/* Badges de estado en la tabla */
 .badge-pending {
   background-color: #fff3cd !important;
   color: #856404 !important;
   font-weight: 600;
+  padding: 6px 10px;
 }
 
 .badge-resolved {
   background-color: #d1e7dd !important;
   color: #0f5132 !important;
   font-weight: 600;
+  padding: 6px 10px;
 }
 
-/* Botón de acción rápido */
 .btn-action-success {
   background-color: #198754 !important;
   border-color: #198754 !important;
   border-radius: 6px !important;
   font-size: 0.8rem !important;
+  padding: 6px 12px;
 }
 
-/* Barra de navegación superior */
-.admin-navbar {
-  background-color: #003776 !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-  padding: 12px 0;
-}
-
-/* Título del panel */
-.navbar-title {
-  color: #ffffff;
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
-}
-
-/* Botón de cerrar sesión formal */
-.btn-logout {
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  color: #ffffff !important;
-  font-size: 0.85rem !important;
-  transition: all 0.2s ease;
-}
-
-.btn-logout:hover {
-  background-color: #ffffff !important;
-  color: #003776 !important;
-  border-color: #ffffff !important;
+/* Ajustes finos para celulares muy pequeños */
+@media (max-width: 576px) {
+  .generated-code {
+    font-size: 1.3rem;
+  }
+  .table-container h5 {
+    font-size: 1.1rem;
+  }
 }
