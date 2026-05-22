@@ -1,28 +1,23 @@
 import React from "react";
-import { Container, Button, Card, Row, Col } from "react-bootstrap";
+import { Container, Button, Card } from "react-bootstrap";
 import { PlusCircle, Search } from "react-bootstrap-icons";
 
 const Home = ({ alHacerClicIniciar, alHacerClicVerMapa }) => {
   return (
-    /* Cambiamos a align-items-start para que las cards suban */
-    <Container fluid className="claim-container d-flex align-items-start justify-content-center min-vh-100 bg-light">
-      
-      <Card className="border-0 bg-white text-dark p-4 text-center home-card shadow-sm">
-        <Card.Body className="p-0">
+    <Container fluid className="claim-container bg-light">
+      <Card className="border-0 bg-white text-dark text-center home-card shadow-sm">
+        <Card.Body className="p-0 d-flex flex-column h-100">
           
-          <div className="mb-4">
-            <h4 className="fw-bold text-dark" style={{ fontSize: "1.5rem" }}>
+          <div className="mb-5">
+            <h4 className="fw-bold text-dark" style={{ fontSize: "1.6rem" }}>
               Gestión Ciudadana
             </h4>
-            <p className="text-muted" style={{ fontSize: "0.95rem" }}>
+            <p className="text-muted mt-2" style={{ fontSize: "1rem" }}>
               Tu canal directo para reportar problemas en tu barrio.
             </p>
           </div>
 
-          <hr className="text-muted my-3" />
-
-          {/* Botones */}
-          <div className="d-flex flex-column gap-2 mt-3">
+          <div className="mt-auto d-flex flex-column gap-3">
             <Button
               variant="primary"
               className="btn-submit w-100"

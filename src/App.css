@@ -8,7 +8,7 @@ body, button, input, select, textarea, .table, .card {
 }
 
 /* ==========================================================================
-   2. ESTRUCTURA Y CONTENEDORES (AJUSTE: ALINEACIÓN SUPERIOR)
+   2. ESTRUCTURA Y CONTENEDORES
    ========================================================================== */
 .claim-container, 
 .status-container, 
@@ -16,13 +16,13 @@ body, button, input, select, textarea, .table, .card {
   background-color: #f4f6f9;
   min-height: 100vh;
   display: flex;
-  align-items: flex-start; /* LAS CARDS QUEDAN ARRIBA */
+  align-items: flex-start; /* Fuerza las tarjetas hacia arriba */
   justify-content: center;
   padding: 1.5rem 0; 
 }
 
 /* ==========================================================================
-   3. TARJETAS (CARDS)
+   3. TARJETAS (CARDS) - ALTURA Y ESPACIADO
    ========================================================================== */
 .claim-card, .status-card, .login-card, .home-card {
   width: 92%; 
@@ -33,6 +33,8 @@ body, button, input, select, textarea, .table, .card {
   background-color: #ffffff;
   color: #212529;
   margin: 0 auto;
+  /* Padding amplio para dar altura natural */
+  padding: 3.5rem 1.75rem !important; 
 }
 
 /* ==========================================================================
@@ -41,15 +43,16 @@ body, button, input, select, textarea, .table, .card {
 .claim-input, .status-input, .login-input {
   border-radius: 6px !important;
   border: 1px solid #ced4da;
-  padding: 0.75rem 0.75rem; /* Más altura */
-  font-size: 1rem; /* Tamaño legible */
+  padding: 0.75rem 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 1.25rem; /* Separación entre campos */
 }
 
 /* ==========================================================================
-   5. BOTONES (AJUSTE: AIRE ENTRE ELLOS)
+   5. BOTONES - TAMAÑO TÁCTIL Y ESPACIO
    ========================================================================== */
 .btn-submit, .btn-login, .btn-search, .btn-back {
-  padding: 0.9rem 1rem !important; /* Altura táctil mejorada */
+  padding: 1rem 1rem !important; 
   font-size: 1rem !important;
   font-weight: 600 !important;
   border-radius: 8px !important;
@@ -57,7 +60,7 @@ body, button, input, select, textarea, .table, .card {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 0.75rem; /* Asegura separación si se apilan */
+  margin-bottom: 0.75rem; 
 }
 
 .btn-submit, .btn-login, .btn-search {
@@ -79,10 +82,11 @@ body, button, input, select, textarea, .table, .card {
   font-size: 1.5rem;
   color: #003776;
   font-weight: 700;
-  padding: 10px 20px;
+  padding: 12px 20px;
   background-color: #e6eef7;
   border-radius: 6px;
   display: inline-block;
+  margin: 1rem 0;
 }
 
 /* ==========================================================================
@@ -91,5 +95,10 @@ body, button, input, select, textarea, .table, .card {
 @media (min-width: 576px) {
   .claim-container, .status-container, .login-container {
     padding-top: 3rem;
+  }
+  
+  .claim-card, .status-card, .login-card {
+    min-height: 520px; /* Altura mínima en desktop */
+    padding: 4rem 2.5rem !important;
   }
 }
