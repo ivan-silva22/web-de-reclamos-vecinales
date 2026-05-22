@@ -70,7 +70,7 @@ const ClaimForm = ({ onClickBack }) => {
               <div>
                 <div className="d-flex mb-2">
                   <Button variant="light" className="btn-back d-flex align-items-center gap-1 py-1 px-2" onClick={onClickBack} style={{ fontSize: "0.78rem" }}>
-                    <ChevronLeft size={11} /> Volver
+                    <ChevronLeft size={11} /> Volver al inicio
                   </Button>
                 </div>
 

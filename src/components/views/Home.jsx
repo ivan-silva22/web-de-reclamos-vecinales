@@ -1,7 +1,3 @@
-import React from "react";
-import { Container, Button, Card } from "react-bootstrap";
-import { PlusCircle, Search } from "react-bootstrap-icons";
-
 const Home = ({ alHacerClicIniciar, alHacerClicVerMapa }) => {
   return (
     <Container fluid className="claim-container bg-light">
@@ -9,10 +5,12 @@ const Home = ({ alHacerClicIniciar, alHacerClicVerMapa }) => {
         <Card.Body className="p-0 d-flex flex-column h-100">
           
           <div className="mb-5">
-            <h4 className="fw-bold text-dark" style={{ fontSize: "1.6rem" }}>
+            {/* Título más grande */}
+            <h4 className="fw-bold text-dark" style={{ fontSize: "1.8rem" }}>
               Gestión Ciudadana
             </h4>
-            <p className="text-muted mt-2" style={{ fontSize: "1rem" }}>
+            {/* Párrafo con mejor legibilidad */}
+            <p className="text-muted mt-3" style={{ fontSize: "1.1rem", lineHeight: "1.5" }}>
               Tu canal directo para reportar problemas en tu barrio.
             </p>
           </div>
@@ -23,7 +21,7 @@ const Home = ({ alHacerClicIniciar, alHacerClicVerMapa }) => {
               className="btn-submit w-100"
               onClick={alHacerClicIniciar}
             >
-              <PlusCircle size={20} />
+              <PlusCircle size={22} />
               Crear Nuevo Reclamo
             </Button>
 
@@ -32,7 +30,7 @@ const Home = ({ alHacerClicIniciar, alHacerClicVerMapa }) => {
               className="btn-back w-100"
               onClick={alHacerClicVerMapa}
             >
-              <Search size={18} />
+              <Search size={20} />
               Consultar Estado
             </Button>
           </div>
@@ -42,5 +40,3 @@ const Home = ({ alHacerClicIniciar, alHacerClicVerMapa }) => {
     </Container>
   );
 };
-
-export default Home;

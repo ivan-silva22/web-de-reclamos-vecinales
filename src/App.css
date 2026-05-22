@@ -3,102 +3,55 @@
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* Aumentamos el tamaño base para móviles */
+body {
+  font-size: 16px; /* Base sólida para lectura cómoda */
+  -webkit-text-size-adjust: 100%; /* Evita cambios raros en iOS */
+}
+
 body, button, input, select, textarea, .table, .card {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 /* ==========================================================================
-   2. ESTRUCTURA Y CONTENEDORES
-   ========================================================================== */
-.claim-container, 
-.status-container, 
-.login-container {
-  background-color: #f4f6f9;
-  min-height: 100vh;
-  display: flex;
-  align-items: flex-start; /* Fuerza las tarjetas hacia arriba */
-  justify-content: center;
-  padding: 1.5rem 0; 
-}
-
-/* ==========================================================================
-   3. TARJETAS (CARDS) - ALTURA Y ESPACIADO
-   ========================================================================== */
-.claim-card, .status-card, .login-card, .home-card {
-  width: 92%; 
-  max-width: 440px;
-  border-radius: 12px !important;
-  border-top: 6px solid #003776 !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
-  background-color: #ffffff;
-  color: #212529;
-  margin: 0 auto;
-  /* Padding amplio para dar altura natural */
-  padding: 3.5rem 1.75rem !important; 
-}
-
-/* ==========================================================================
-   4. FORMULARIOS E INPUTS
+   4. FORMULARIOS E INPUTS (Texto más grande)
    ========================================================================== */
 .claim-input, .status-input, .login-input {
   border-radius: 6px !important;
   border: 1px solid #ced4da;
-  padding: 0.75rem 0.75rem;
-  font-size: 1rem;
-  margin-bottom: 1.25rem; /* Separación entre campos */
+  padding: 0.85rem 0.75rem; /* Un poco más de altura */
+  font-size: 1.05rem !important; /* Más grande en celular */
+  margin-bottom: 1.25rem;
 }
 
 /* ==========================================================================
-   5. BOTONES - TAMAÑO TÁCTIL Y ESPACIO
+   5. BOTONES (Texto más grande)
    ========================================================================== */
 .btn-submit, .btn-login, .btn-search, .btn-back {
-  padding: 1rem 1rem !important; 
-  font-size: 1rem !important;
+  padding: 1.1rem 1rem !important; 
+  font-size: 1.05rem !important; /* Ligeramente más grande */
   font-weight: 600 !important;
-  border-radius: 8px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 0.75rem; 
-}
-
-.btn-submit, .btn-login, .btn-search {
-  background-color: #003776 !important;
-  border-color: #003776 !important;
-  color: #ffffff !important;
-}
-
-.btn-back {
-  background-color: #e9ecef !important;
-  border: 1px solid #dee2e6 !important;
-  color: #495057 !important;
+  /* ... resto igual ... */
 }
 
 /* ==========================================================================
-   6. OTROS COMPONENTES
+   7. MEDIA QUERIES (Ajustes de escala)
    ========================================================================== */
-.generated-code {
-  font-size: 1.5rem;
-  color: #003776;
-  font-weight: 700;
-  padding: 12px 20px;
-  background-color: #e6eef7;
-  border-radius: 6px;
-  display: inline-block;
-  margin: 1rem 0;
+/* Pantallas pequeñas (celulares) */
+@media (max-width: 575px) {
+  h4 { font-size: 1.7rem !important; }
+  p { font-size: 1.05rem !important; }
+  .btn-submit, .btn-back { font-size: 1.05rem !important; }
 }
 
-/* ==========================================================================
-   7. MEDIA QUERIES
-   ========================================================================== */
+/* Escritorio */
 @media (min-width: 576px) {
   .claim-container, .status-container, .login-container {
     padding-top: 3rem;
   }
   
   .claim-card, .status-card, .login-card {
-    min-height: 520px; /* Altura mínima en desktop */
+    min-height: 520px;
     padding: 4rem 2.5rem !important;
   }
 }
