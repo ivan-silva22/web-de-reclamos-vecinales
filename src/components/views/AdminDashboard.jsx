@@ -59,46 +59,49 @@ const AdminDashboard = () => {
       {/* Top Header Institucional */}
       <AdminNavbar onLogout={() => alert("Función de cierre de sesión no implementada en la demo")} />
       
-      {/* SOLUCIÓN CLAVE: Agregamos 'px-3' para dar margen lateral en celulares, y 'px-sm-0' para mantener el comportamiento original en PC */}
+      {/* Contenedor con márgenes laterales en celular (px-3) y normal en PC */}
       <Container className="pt-3 pt-sm-4 pb-5 px-3 px-sm-0">
         
-        {/* Panel de Estadísticas Rápidas */}
+        {/* Panel de Estadísticas Rápidas (Iconos corregidos para móvil) */}
         <Row className="g-2 g-sm-3 mb-3 mb-sm-4">
           <Col xs={4} sm={4}>
-            <Card className="stat-card border-0 shadow-sm p-1 p-sm-2 bg-white" style={{ borderRadius: "10px" }}>
-              <Card.Body className="d-flex align-items-center justify-content-between p-2">
+            <Card className="stat-card border-0 shadow-sm bg-white" style={{ borderRadius: "10px" }}>
+              <Card.Body className="d-flex align-items-center justify-content-between p-2 p-sm-3">
                 <div>
                   <h6 className="text-muted small mb-0 fw-semibold d-none d-sm-block" style={{ fontSize: "0.75rem" }}>Total Recibidos</h6>
                   <h6 className="text-muted small mb-0 fw-semibold d-block d-sm-none" style={{ fontSize: "0.68rem" }}>Total</h6>
-                  <h4 className="fw-bold mb-0 text-dark mt-sm-1" style={{ fontSize: "1.4rem" }}>{totalClaims}</h4>
+                  <h4 className="fw-bold mb-0 text-dark mt-sm-1" style={{ fontSize: "1.25rem", sm: "1.4rem" }}>{totalClaims}</h4>
                 </div>
-                <ListTask size={20} className="text-secondary opacity-50 d-none d-xs-block" />
+                {/* SOLUCIÓN: Cambiado a d-block para asegurar que se renderice siempre, adaptando el tamaño */}
+                <ListTask className="text-secondary opacity-50 d-block" size={16} style={{ minWidth: "16px" }} />
               </Card.Body>
             </Card>
           </Col>
           
           <Col xs={4} sm={4}>
-            <Card className="stat-card border-0 shadow-sm p-1 p-sm-2 bg-white" style={{ borderRadius: "10px" }}>
-              <Card.Body className="d-flex align-items-center justify-content-between p-2">
+            <Card className="stat-card border-0 shadow-sm bg-white" style={{ borderRadius: "10px" }}>
+              <Card.Body className="d-flex align-items-center justify-content-between p-2 p-sm-3">
                 <div>
                   <h6 className="text-muted small mb-0 fw-semibold d-none d-sm-block" style={{ fontSize: "0.75rem" }}>Pendientes</h6>
                   <h6 className="text-muted small mb-0 fw-semibold d-block d-sm-none" style={{ fontSize: "0.68rem" }}>Pend.</h6>
-                  <h4 className="fw-bold mb-0 text-warning mt-sm-1" style={{ fontSize: "1.4rem" }}>{pendingClaims}</h4>
+                  <h4 className="fw-bold mb-0 text-warning mt-sm-1" style={{ fontSize: "1.25rem", sm: "1.4rem" }}>{pendingClaims}</h4>
                 </div>
-                <Clock size={18} className="text-warning opacity-70 d-none d-xs-block" />
+                {/* SOLUCIÓN: Cambiado a d-block */}
+                <Clock className="text-warning opacity-70 d-block" size={15} style={{ minWidth: "15px" }} />
               </Card.Body>
             </Card>
           </Col>
 
           <Col xs={4} sm={4}>
-            <Card className="stat-card border-0 shadow-sm p-1 p-sm-2 bg-white" style={{ borderRadius: "10px" }}>
-              <Card.Body className="d-flex align-items-center justify-content-between p-2">
+            <Card className="stat-card border-0 shadow-sm bg-white" style={{ borderRadius: "10px" }}>
+              <Card.Body className="d-flex align-items-center justify-content-between p-2 p-sm-3">
                 <div>
                   <h6 className="text-muted small mb-0 fw-semibold d-none d-sm-block" style={{ fontSize: "0.75rem" }}>Solucionados</h6>
                   <h6 className="text-muted small mb-0 fw-semibold d-block d-sm-none" style={{ fontSize: "0.68rem" }}>Listos</h6>
-                  <h4 className="fw-bold mb-0 text-success mt-sm-1" style={{ fontSize: "1.4rem" }}>{resolvedClaims}</h4>
+                  <h4 className="fw-bold mb-0 text-success mt-sm-1" style={{ fontSize: "1.25rem", sm: "1.4rem" }}>{resolvedClaims}</h4>
                 </div>
-                <Check2All size={20} className="text-success opacity-70 d-none d-xs-block" />
+                {/* SOLUCIÓN: Cambiado a d-block */}
+                <Check2All className="text-success opacity-70 d-block" size={18} style={{ minWidth: "18px" }} />
               </Card.Body>
             </Card>
           </Col>
