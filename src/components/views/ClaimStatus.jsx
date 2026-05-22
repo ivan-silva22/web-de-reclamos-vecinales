@@ -74,7 +74,7 @@ const ClaimStatus = ({ onClickBack }) => {
 
           {/* Tarjeta de Resultados Optimizada */}
           {searchResult && (
-            <div className="result-box p-2.5 border rounded shadow-sm bg-light mt-1 text-start" style={{ fontSize: "0.82rem" }}>
+            <div className="result-box p-3 border rounded shadow-sm bg-light mt-1 text-start" style={{ fontSize: "0.82rem" }}>
               <div className="d-flex justify-content-between align-items-center mb-2.5 border-bottom pb-2">
                 <span className="fw-bold text-secondary" style={{ fontSize: "0.72rem" }}>CÓDIGO: {searchResult.code}</span>
                 <span className="status-badge in-progress px-2 py-0.5 rounded bg-warning text-dark fw-semibold" style={{ fontSize: "0.7rem" }}>
