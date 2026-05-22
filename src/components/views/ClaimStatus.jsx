@@ -98,7 +98,7 @@ const ClaimStatus = ({ onClickBack }) => {
                 <span className="text-wrap"><strong>Ubicación:</strong> {searchResult.address}</span>
               </div>
 
-              <div className="p-2 bg-white rounded border text-muted" style={{ fontSize: "0.78rem", lineHeight: "1.3" }}>
+              <div className="p-2 bg-white rounded border text-muted mt-2" style={{ fontSize: "0.78rem", lineHeight: "1.3" }}>
                 <strong>Actualización:</strong> {searchResult.details}
               </div>
             </div>
