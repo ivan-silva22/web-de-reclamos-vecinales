@@ -59,10 +59,10 @@ const AdminDashboard = () => {
       {/* Top Header Institucional */}
       <AdminNavbar onLogout={() => alert("Función de cierre de sesión no implementada en la demo")} />
       
-      {/* MEJORA: pt-3 en móvil y pt-4 en PC para no dejar un espacio muerto gigante arriba */}
-      <Container className="pt-3 pt-sm-4 pb-5">
+      {/* SOLUCIÓN CLAVE: Agregamos 'px-3' para dar margen lateral en celulares, y 'px-sm-0' para mantener el comportamiento original en PC */}
+      <Container className="pt-3 pt-sm-4 pb-5 px-3 px-sm-0">
         
-        {/* Panel de Estadísticas Rápidas (Compacto y responsivo) */}
+        {/* Panel de Estadísticas Rápidas */}
         <Row className="g-2 g-sm-3 mb-3 mb-sm-4">
           <Col xs={4} sm={4}>
             <Card className="stat-card border-0 shadow-sm p-1 p-sm-2 bg-white" style={{ borderRadius: "10px" }}>
@@ -105,8 +105,7 @@ const AdminDashboard = () => {
         </Row>
 
         {/* Tabla Central de Reclamos */}
-        {/* MEJORA: p-2 en móviles, p-3 en PC. Bordes suavizados para look moderno */}
-        <div className="table-container p-2 p-sm-3 bg-white border shadow-sm" style={{ borderRadius: "12px", overflow: "hidden" }}>
+        <div className="table-container p-2 p-sm-3 bg-white border-0 shadow-sm" style={{ borderRadius: "12px", overflow: "hidden" }}>
           <div className="mb-2.5 py-1 px-1">
             <h6 className="fw-bold text-dark mb-0" style={{ fontSize: "1.05rem", letterSpacing: "-0.2px" }}>
               Solicitudes Ciudadanas
@@ -132,7 +131,6 @@ const AdminDashboard = () => {
                   <td className="py-2.5 text-muted">{claim.category}</td>
                   <td className="py-2.5 text-muted text-nowrap">{claim.address}</td>
                   <td className="py-2.5">
-                    {/* Estilo de los Badges compactados */}
                     <Badge
                       bg={claim.status === "Pendiente" ? "warning" : "success"}
                       text={claim.status === "Pendiente" ? "dark" : "white"}
