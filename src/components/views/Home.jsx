@@ -4,48 +4,43 @@ import { PlusCircle, Search } from "react-bootstrap-icons";
 
 const Home = ({ alHacerClicIniciar, alHacerClicVerMapa }) => {
   return (
-    <Container className="d-flex align-items-start justify-content-center min-vh-100 pt-5 pb-4 bg-light mt-0">
-      <Card className="border-0 bg-white text-dark p-4 text-center home-card mt-4" style={{ marginTop: "12vh" }}>
-        <Card.Body className="d-flex flex-column justify-content-between">
-          <div className="mb-3">
-            <h3 className="fw-bold text-dark mt-1" style={{ fontSize: "1.65rem" }}>
+    /* Cambiamos a align-items-start para que las cards suban */
+    <Container fluid className="claim-container d-flex align-items-start justify-content-center min-vh-100 bg-light">
+      
+      <Card className="border-0 bg-white text-dark p-4 text-center home-card shadow-sm">
+        <Card.Body className="p-0">
+          
+          <div className="mb-4">
+            <h4 className="fw-bold text-dark" style={{ fontSize: "1.5rem" }}>
               Gestión Ciudadana
-            </h3>
-            <p className="text-muted small px-2 mt-3">
-              Tu canal directo para reportar problemas en tu barrio y seguir las
-              soluciones en tiempo real.
+            </h4>
+            <p className="text-muted" style={{ fontSize: "0.95rem" }}>
+              Tu canal directo para reportar problemas en tu barrio.
             </p>
           </div>
 
-          <hr className="text-muted my-3" style={{ opacity: "0.1" }} />
+          <hr className="text-muted my-3" />
 
-          <Row className="g-3">
-            <Col xs={12}>
-              <Button
-                variant="primary"
-                size="lg"
-                className="w-100 py-3 fw-semibold shadow-sm d-flex align-items-center justify-content-center gap-2 btn-submit"
-                onClick={alHacerClicIniciar}
-                style={{ fontSize: "0.95rem" }}
-              >
-                <PlusCircle size={18} />
-                Crear Nuevo Reclamo
-              </Button>
-            </Col>
+          {/* Botones */}
+          <div className="d-flex flex-column gap-2 mt-3">
+            <Button
+              variant="primary"
+              className="btn-submit w-100"
+              onClick={alHacerClicIniciar}
+            >
+              <PlusCircle size={20} />
+              Crear Nuevo Reclamo
+            </Button>
 
-            <Col xs={12}>
-              <Button
-                variant="outline-secondary"
-                size="lg"
-                className="w-100 py-3 fw-semibold text-dark border-secondary d-flex align-items-center justify-content-center gap-2"
-                onClick={alHacerClicVerMapa}
-                style={{ borderRadius: "6px", fontSize: "0.95rem" }}
-              >
-                <Search size={16} />
-                Consultar Estado
-              </Button>
-            </Col>
-          </Row>
+            <Button
+              variant="light"
+              className="btn-back w-100"
+              onClick={alHacerClicVerMapa}
+            >
+              <Search size={18} />
+              Consultar Estado
+            </Button>
+          </div>
           
         </Card.Body>
       </Card>

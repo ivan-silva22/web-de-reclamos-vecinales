@@ -8,7 +8,7 @@ body, button, input, select, textarea, .table, .card {
 }
 
 /* ==========================================================================
-   2. ESTRUCTURA, CONTENEDORES Y VISTAS BASE
+   2. ESTRUCTURA Y CONTENEDORES (AJUSTE: ALINEACIÓN SUPERIOR)
    ========================================================================== */
 .claim-container, 
 .status-container, 
@@ -16,279 +16,80 @@ body, button, input, select, textarea, .table, .card {
   background-color: #f4f6f9;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* LAS CARDS QUEDAN ARRIBA */
   justify-content: center;
-  padding: 1rem 0; /* CORRECCIÓN: Colchón más compacto en mobile para aprovechar el alto */
+  padding: 1.5rem 0; 
 }
 
 /* ==========================================================================
-   3. TARJETAS (CARDS) - SILUETA ADAPTATIVA
+   3. TARJETAS (CARDS)
    ========================================================================== */
-/* Estilo base compartido */
-.claim-card, 
-.status-card, 
-.login-card, 
-.home-card {
-  width: 90%; /* CORRECCIÓN: Ajustado a 90% para mejor margen en celulares finos */
+.claim-card, .status-card, .login-card, .home-card {
+  width: 92%; 
+  max-width: 440px;
   border-radius: 12px !important;
   border-top: 6px solid #003776 !important;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
   background-color: #ffffff;
   color: #212529;
-}
-
-/* CORRECCIÓN: Eliminado min-height rígido en mobile para evitar desbordes y scrolls rotos */
-.claim-card, 
-.status-card {
-  max-width: 440px;
-  min-height: auto; 
-  padding: 1.5rem 1.25rem !important; /* Padding compacto para mobile */
-  margin: 1.5rem auto;
-}
-
-.login-card {
-  max-width: 350px;
-  min-height: auto;
-  padding: 1.75rem 1.25rem !important;
-  margin: auto;
-}
-
-.home-card {
-  max-width: 350px;
-  min-height: auto;
-  padding: 2rem 1.25rem !important;
-  margin: auto !important;
+  margin: 0 auto;
 }
 
 /* ==========================================================================
-   4. COMPONENTES DE TEXTO Y TÍTULOS
+   4. FORMULARIOS E INPUTS
    ========================================================================== */
-.claim-title, 
-.status-title, 
-.login-title, 
-.navbar-title {
-  color: #003776;
-  letter-spacing: -0.5px;
-}
-
-/* ==========================================================================
-   5. FORMULARIOS (INPUTS Y BOTONES)
-   ========================================================================== */
-.claim-input, 
-.status-input, 
-.login-input {
+.claim-input, .status-input, .login-input {
   border-radius: 6px !important;
   border: 1px solid #ced4da;
-  padding: 0.55rem 0.75rem; /* CORRECCIÓN: Altura del input más equilibrada */
-  font-size: 0.9rem; /* CORRECCIÓN: Evita el zoom automático molesto en iOS */
+  padding: 0.75rem 0.75rem; /* Más altura */
+  font-size: 1rem; /* Tamaño legible */
 }
 
-.claim-input:focus, 
-.status-input:focus, 
-.login-input:focus {
-  border-color: #003776;
-  box-shadow: 0 0 0 0.25rem rgba(0, 55, 118, 0.15);
+/* ==========================================================================
+   5. BOTONES (AJUSTE: AIRE ENTRE ELLOS)
+   ========================================================================== */
+.btn-submit, .btn-login, .btn-search, .btn-back {
+  padding: 0.9rem 1rem !important; /* Altura táctil mejorada */
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 0.75rem; /* Asegura separación si se apilan */
 }
 
-/* Botón Volver */
+.btn-submit, .btn-login, .btn-search {
+  background-color: #003776 !important;
+  border-color: #003776 !important;
+  color: #ffffff !important;
+}
+
 .btn-back {
   background-color: #e9ecef !important;
   border: 1px solid #dee2e6 !important;
   color: #495057 !important;
-  border-radius: 6px !important;
-  font-size: 0.82rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.btn-back:hover {
-  background-color: #dee2e6 !important;
-  color: #212529 !important;
-}
-
-/* Botones Principales de Acción */
-.btn-submit, 
-.btn-login, 
-.btn-search {
-  background-color: #003776 !important;
-  border-color: #003776 !important;
-  border-radius: 6px !important;
-  font-size: 0.92rem; /* CORRECCIÓN: Tipografía estilizada y legible en mobile */
-  transition: all 0.2s ease;
-}
-
-.btn-submit:hover, 
-.btn-login:hover, 
-.btn-search:hover {
-  background-color: #00234a !important;
-  border-color: #00234a !important;
 }
 
 /* ==========================================================================
-   6. BLOQUES DE ÉXITO, ESTADOS Y FEEDBACK
+   6. OTROS COMPONENTES
    ========================================================================== */
-.success-box, 
-.result-box {
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  border: 1px dashed #003776;
-}
-
-.result-box {
-  border: 1px solid #e9ecef;
-}
-
 .generated-code {
-  font-size: 1.4rem; /* CORRECCIÓN: Ajustado de base para evitar saltos toscos */
+  font-size: 1.5rem;
   color: #003776;
   font-weight: 700;
-  letter-spacing: 1px;
+  padding: 10px 20px;
   background-color: #e6eef7;
   border-radius: 6px;
-  padding: 8px 14px;
   display: inline-block;
 }
 
-.status-badge {
-  background-color: #e2e3e5;
-  color: #383d41;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 50px;
-}
-
-.status-badge.in-progress {
-  background-color: #fff3cd;
-  color: #856404;
-}
-
 /* ==========================================================================
-   7. PANEL DE ADMINISTRACIÓN (DASHBOARD)
-   ========================================================================== */
-.dashboard-container {
-  background-color: #f4f6f9;
-  min-height: 100vh;
-}
-
-/* Navbar Interna */
-.admin-navbar {
-  background-color: #003776 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 12px 0;
-}
-
-.navbar-title {
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.btn-logout {
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  color: #ffffff !important;
-  font-size: 0.8rem !important;
-  border-radius: 6px !important;
-}
-
-.btn-logout:hover {
-  background-color: #ffffff !important;
-  color: #003776 !important;
-}
-
-/* Tarjetas de Métricas Rápidas */
-.stat-card {
-  border-radius: 8px !important;
-  border: none !important;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02) !important;
-}
-
-.stat-border-total { border-left: 5px solid #003776 !important; }
-.stat-border-pending { border-left: 5px solid #ffc107 !important; }
-.stat-border-resolved { border-left: 5px solid #198754 !important; }
-
-/* Tabla Centralizada de Gestión */
-.table-container {
-  background-color: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-  border: 1px solid #e9ecef !important;
-}
-
-.custom-table th {
-  background-color: #f8f9fa !important;
-  color: #495057;
-  font-weight: 600;
-  font-size: 0.8rem; /* CORRECCIÓN: Más legible en modo responsivo */
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 10px 12px;
-}
-
-.custom-table td {
-  font-size: 0.88rem;
-  padding: 12px 12px;
-}
-
-/* Badges de la Tabla */
-.badge-pending {
-  background-color: #fff3cd !important;
-  color: #856404 !important;
-  font-weight: 600;
-  padding: 4px 8px;
-}
-
-.badge-resolved {
-  background-color: #d1e7dd !important;
-  color: #0f5132 !important;
-  font-weight: 600;
-  padding: 4px 8px;
-}
-
-/* Botones de acción dentro de la tabla */
-.btn-action-success {
-  background-color: #198754 !important;
-  border-color: #198754 !important;
-  border-radius: 6px !important;
-  font-size: 0.78rem !important;
-  padding: 5px 10px;
-}
-
-/* ==========================================================================
-   8. MEDIA QUERIES (RESPONSIVE FINE-TUNING)
+   7. MEDIA QUERIES
    ========================================================================== */
 @media (min-width: 576px) {
-  /* CORRECCIÓN: Devolvemos el min-height premium y paddings amplios SOLO en pantallas grandes */
-  .claim-card, 
-  .status-card {
-    min-height: 520px;
-    padding: 2.5rem 1.5rem !important;
-  }
-  
-  .login-card {
-    min-height: 440px;
-    padding: 2.5rem 1.5rem !important;
-  }
-
-  .home-card {
-    min-height: 460px;
-    padding: 3rem 1.75rem !important;
-  }
-
-  .claim-container, 
-  .status-container, 
-  .login-container {
-    padding: 2rem 0;
-  }
-}
-
-@media (max-width: 576px) {
-  .generated-code {
-    font-size: 1.25rem;
-  }
-  .table-container h5 {
-    font-size: 1.05rem;
+  .claim-container, .status-container, .login-container {
+    padding-top: 3rem;
   }
 }
