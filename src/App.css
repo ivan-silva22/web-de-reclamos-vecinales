@@ -245,3 +245,49 @@ body, button, input, select, textarea, .table, .card {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
   margin: 1.5rem auto;
 }
+
+/* --- ESTILOS GENERALES Y CONTENEDORES --- */
+.claim-container, .status-container, .login-container {
+  background-color: #f4f6f9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0; /* Asegura un colchón superior/inferior en pantallas chicas */
+}
+
+/* Limitadores de ancho y alto para silueta vertical (SaaS minimalista) */
+.claim-card, .status-card {
+  width: 86%;              /* Reducimos del 90% al 86% para hacerla más esbelta */
+  max-width: 440px;        /* Ajuste fino de ancho máximo para pantallas medianas */
+  min-height: 520px;       /* Forzamos un alto mínimo para garantizar la verticalidad */
+  padding: 2.5rem 1.5rem !important; /* Más padding arriba y abajo, menos a los costados */
+  border-radius: 12px !important;
+  border-top: 6px solid #003776 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+  margin: auto;
+  display: flex;
+  
+}
+
+.login-card {
+  width: 86%;
+  max-width: 350px;        /* Comprimido para aspecto estilizado tipo app mobile */
+  min-height: 440px;       /* Altura mínima estirada */
+  padding: 2.5rem 1.5rem !important; 
+  border-radius: 12px !important;
+  border-top: 6px solid #003776 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+  margin: auto;
+}
+
+.home-card {
+  width: 86%;
+  max-width: 350px;        /* Ancho estrecho para que predomine la altura */
+  min-height: 460px;       /* Forzamos que estire hacia abajo de forma limpia */
+  padding: 3rem 1.75rem !important; /* Padding premium: mucho aire arriba y abajo */
+  border-radius: 12px !important;
+  border-top: 6px solid #003776 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+  margin: auto;
+}
