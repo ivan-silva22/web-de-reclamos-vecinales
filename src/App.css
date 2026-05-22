@@ -18,18 +18,18 @@ body, button, input, select, textarea, .table, .card {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0; /* Asegura un colchón superior/inferior en pantallas chicas */
+  padding: 1rem 0; /* CORRECCIÓN: Colchón más compacto en mobile para aprovechar el alto */
 }
 
 /* ==========================================================================
-   3. TARJETAS (CARDS) - SILUETA VERTICAL MINIMALISTA
+   3. TARJETAS (CARDS) - SILUETA ADAPTATIVA
    ========================================================================== */
-/* Estilo base compartido para optimizar código */
+/* Estilo base compartido */
 .claim-card, 
 .status-card, 
 .login-card, 
 .home-card {
-  width: 86%; /* Deja aire sutil a los costados en celulares */
+  width: 90%; /* CORRECCIÓN: Ajustado a 90% para mejor margen en celulares finos */
   border-radius: 12px !important;
   border-top: 6px solid #003776 !important;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
@@ -37,27 +37,27 @@ body, button, input, select, textarea, .table, .card {
   color: #212529;
 }
 
-/* Especificaciones individuales de tamaño y padding */
+/* CORRECCIÓN: Eliminado min-height rígido en mobile para evitar desbordes y scrolls rotos */
 .claim-card, 
 .status-card {
   max-width: 440px;
-  min-height: 520px; /* Forzamos aspecto vertical */
-  padding: 2.5rem 1.5rem !important; /* Más aire arriba/abajo, compacto a los lados */
-  margin: auto;
+  min-height: auto; 
+  padding: 1.5rem 1.25rem !important; /* Padding compacto para mobile */
+  margin: 1.5rem auto;
 }
 
 .login-card {
   max-width: 350px;
-  min-height: 440px;
-  padding: 2.5rem 1.5rem !important;
+  min-height: auto;
+  padding: 1.75rem 1.25rem !important;
   margin: auto;
 }
 
 .home-card {
   max-width: 350px;
-  min-height: 460px;
-  padding: 3rem 1.75rem !important; /* Padding premium institucional */
-  margin: 1% auto auto auto !important; /* Mantiene el ajuste fino superior */
+  min-height: auto;
+  padding: 2rem 1.25rem !important;
+  margin: auto !important;
 }
 
 /* ==========================================================================
@@ -74,14 +74,13 @@ body, button, input, select, textarea, .table, .card {
 /* ==========================================================================
    5. FORMULARIOS (INPUTS Y BOTONES)
    ========================================================================== */
-/* Entradas de texto */
 .claim-input, 
 .status-input, 
 .login-input {
   border-radius: 6px !important;
   border: 1px solid #ced4da;
-  padding: 0.6rem 0.75rem;
-  font-size: 0.95rem;
+  padding: 0.55rem 0.75rem; /* CORRECCIÓN: Altura del input más equilibrada */
+  font-size: 0.9rem; /* CORRECCIÓN: Evita el zoom automático molesto en iOS */
 }
 
 .claim-input:focus, 
@@ -97,7 +96,7 @@ body, button, input, select, textarea, .table, .card {
   border: 1px solid #dee2e6 !important;
   color: #495057 !important;
   border-radius: 6px !important;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 500;
   transition: all 0.2s ease;
 }
@@ -114,7 +113,7 @@ body, button, input, select, textarea, .table, .card {
   background-color: #003776 !important;
   border-color: #003776 !important;
   border-radius: 6px !important;
-  font-size: 1rem;
+  font-size: 0.92rem; /* CORRECCIÓN: Tipografía estilizada y legible en mobile */
   transition: all 0.2s ease;
 }
 
@@ -140,22 +139,22 @@ body, button, input, select, textarea, .table, .card {
 }
 
 .generated-code {
-  font-size: 1.6rem;
+  font-size: 1.4rem; /* CORRECCIÓN: Ajustado de base para evitar saltos toscos */
   color: #003776;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   background-color: #e6eef7;
   border-radius: 6px;
-  padding: 8px 16px;
+  padding: 8px 14px;
   display: inline-block;
 }
 
 .status-badge {
   background-color: #e2e3e5;
   color: #383d41;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  padding: 6px 14px;
+  padding: 4px 10px;
   border-radius: 50px;
 }
 
@@ -176,12 +175,12 @@ body, button, input, select, textarea, .table, .card {
 .admin-navbar {
   background-color: #003776 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 14px 0;
+  padding: 12px 0;
 }
 
 .navbar-title {
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
@@ -189,7 +188,7 @@ body, button, input, select, textarea, .table, .card {
 .btn-logout {
   border: 1px solid rgba(255, 255, 255, 0.4) !important;
   color: #ffffff !important;
-  font-size: 0.85rem !important;
+  font-size: 0.8rem !important;
   border-radius: 6px !important;
 }
 
@@ -222,15 +221,15 @@ body, button, input, select, textarea, .table, .card {
   background-color: #f8f9fa !important;
   color: #495057;
   font-weight: 600;
-  font-size: 0.88rem;
+  font-size: 0.8rem; /* CORRECCIÓN: Más legible en modo responsivo */
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 12px 16px;
+  padding: 10px 12px;
 }
 
 .custom-table td {
-  font-size: 0.92rem;
-  padding: 14px 16px;
+  font-size: 0.88rem;
+  padding: 12px 12px;
 }
 
 /* Badges de la Tabla */
@@ -238,14 +237,14 @@ body, button, input, select, textarea, .table, .card {
   background-color: #fff3cd !important;
   color: #856404 !important;
   font-weight: 600;
-  padding: 6px 10px;
+  padding: 4px 8px;
 }
 
 .badge-resolved {
   background-color: #d1e7dd !important;
   color: #0f5132 !important;
   font-weight: 600;
-  padding: 6px 10px;
+  padding: 4px 8px;
 }
 
 /* Botones de acción dentro de la tabla */
@@ -253,18 +252,43 @@ body, button, input, select, textarea, .table, .card {
   background-color: #198754 !important;
   border-color: #198754 !important;
   border-radius: 6px !important;
-  font-size: 0.8rem !important;
-  padding: 6px 12px;
+  font-size: 0.78rem !important;
+  padding: 5px 10px;
 }
 
 /* ==========================================================================
    8. MEDIA QUERIES (RESPONSIVE FINE-TUNING)
    ========================================================================== */
+@media (min-width: 576px) {
+  /* CORRECCIÓN: Devolvemos el min-height premium y paddings amplios SOLO en pantallas grandes */
+  .claim-card, 
+  .status-card {
+    min-height: 520px;
+    padding: 2.5rem 1.5rem !important;
+  }
+  
+  .login-card {
+    min-height: 440px;
+    padding: 2.5rem 1.5rem !important;
+  }
+
+  .home-card {
+    min-height: 460px;
+    padding: 3rem 1.75rem !important;
+  }
+
+  .claim-container, 
+  .status-container, 
+  .login-container {
+    padding: 2rem 0;
+  }
+}
+
 @media (max-width: 576px) {
   .generated-code {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
   .table-container h5 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 }
