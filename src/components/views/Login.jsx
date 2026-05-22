@@ -25,10 +25,10 @@ const Login = ({ onLoginSuccess, onClickBack }) => {
   };
 
   return (
-    // SOLUCIÓN CLAVE: Añadimos 'px-3' para dar el margen lateral exacto en celulares y evitar que la tarjeta toque los bordes
-    <Container className="d-flex align-items-center justify-content-center min-vh-100 py-4 px-3 login-container bg-light">
+    // MEJORA CLAVE: Cambiamos 'align-items-center' por 'align-items-start pt-5 align-items-sm-center pt-sm-4'
+    // Esto hace que en celulares empiece arriba con un lindo espacio de aire, ideal para cuando se despliega el teclado.
+    <Container className="d-flex align-items-start justify-content-center min-vh-100 pt-5 pt-sm-4 pb-4 px-3 login-container bg-light align-items-sm-center">
       
-      {/* OPTIMIZACIÓN: Ajustamos padding interno 'p-3 p-sm-4' y reducimos sutilmente el maxWidth para pantallas móviles */}
       <Card 
         className="border-0 bg-white text-dark p-3 p-sm-4 w-100 login-card shadow-sm" 
         style={{ 
