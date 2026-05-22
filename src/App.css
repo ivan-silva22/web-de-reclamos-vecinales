@@ -212,3 +212,36 @@ body, button, input, select, textarea, .table, .card {
     font-size: 1.1rem;
   }
 }
+
+/* --- ESTILOS GENERALES Y CONTENEDORES --- */
+.claim-container, .status-container, .login-container {
+  background-color: #f4f6f9;
+}
+
+/* Limitadores de ancho responsivos centralizados y esbeltos */
+.claim-card, .status-card {
+  width: 90%;            /* Toma el 90% del ancho de la pantalla en móviles para dejar aire */
+  max-width: 480px;      /* Bajamos de 550px a 480px para que sea más delgada en pantallas medianas/grandes */
+  border-radius: 12px !important;
+  border-top: 6px solid #003776 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  margin: 1.5rem auto;   /* Genera una separación uniforme arriba y abajo */
+}
+
+.login-card {
+  width: 90%;
+  max-width: 380px;      /* Bajamos de 420px a 380px para estilizar el login */
+  border-radius: 12px !important;
+  border-top: 6px solid #003776 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  margin: 1.5rem auto;
+}
+
+.home-card {
+  width: 90%;
+  max-width: 380px;      /* Bajamos de 460px a 380px, dándole un aspecto bien vertical e integrado */
+  border-radius: 12px !important;
+  border-top: 6px solid #003776 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  margin: 1.5rem auto;
+}
