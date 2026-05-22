@@ -40,3 +40,5 @@ const Home = ({ alHacerClicIniciar, alHacerClicVerMapa }) => {
     </Container>
   );
 };
+
+export default Home;
